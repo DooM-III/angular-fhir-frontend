@@ -6,7 +6,7 @@ import { CoreModule } from './core/core.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { AuthModule } from './auth/auth.module';
     HttpClientModule,
     CoreModule,
     LandingPageModule,
-    AuthModule
+    AuthModule,
+    BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent]
 })

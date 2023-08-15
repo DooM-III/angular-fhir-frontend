@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FaceSnap } from './core/models/face-snap.model';
+import { Patient } from './core/models/patient.model';
 import { Observable, filter, interval, map, tap } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { Observable, filter, interval, map, tap } from 'rxjs';
 })
 
 export class AppComponent implements OnInit {
-  faceSnaps!: FaceSnap[];
+  patients!: Patient[];
   interval$!: Observable<string>;
 
   ngOnInit() {

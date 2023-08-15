@@ -2,22 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, map, tap } from 'rxjs';
 import { Router } from '@angular/router';
-import { FaceSnapsService } from 'src/app/core/services/face-snaps.service';
-import { FaceSnap } from 'src/app/core/models/face-snap.model';
+import { PatientsService } from 'src/app/core/services/patients.service';
+import { Patient } from 'src/app/core/models/patient.model';
 
 @Component({
-  selector: 'app-new-face-snap',
-  templateUrl: './new-face-snap.component.html',
-  styleUrls: ['./new-face-snap.component.scss']
+  selector: 'app-new-patient',
+  templateUrl: './new-patient.component.html',
+  styleUrls: ['./new-patient.component.scss']
 })
-export class NewFaceSnapComponent implements OnInit {
+export class NewPatientComponent implements OnInit {
 
   snapForm!: FormGroup;
-  faceSnapPreview$!: Observable<FaceSnap>;
+  PatientPreview$!: Observable<Patient>;
   urlRegex!: RegExp;
 
   constructor(private formBuilder: FormBuilder,
-    private faceSnapsService: FaceSnapsService,
+    private PatientsService: PatientsService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class NewFaceSnapComponent implements OnInit {
       }, {
         updateOn: 'blur'
     });
-    this.faceSnapPreview$ = this.snapForm.valueChanges.pipe(
+    this.PatientPreview$ = this.snapForm.valueChanges.pipe(
       map(formValue => ({
           ...formValue,
           createdDate: new Date(),
@@ -40,12 +40,12 @@ export class NewFaceSnapComponent implements OnInit {
       );
   }
 
-  onSubmitForm() {
-    console.log(this.snapForm.value);
-    this.faceSnapsService.addFaceSnap(this.snapForm.value).pipe(
-      tap(() => this.router.navigateByUrl('/facesnaps'))).subscribe();
+//   onSubmitForm() {
+//     console.log(this.snapForm.value);
+//     this.PatientsService.addPatient(this.snapForm.value).pipe(
+//       tap(() => this.router.navigateByUrl('/Patients'))).subscribe();
   
-    ;
-}
+//     ;
+// }
 
 }

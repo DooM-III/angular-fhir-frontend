@@ -4,7 +4,7 @@ import { LandingPageComponent } from './landing-page/components/landing-page/lan
 
 
 const routes: Routes = [
-  { path: 'facesnaps', loadChildren: () => import('./face-snaps/face-snaps.module').then(m => m.FaceSnapsModule) },
+  { path: 'patients', loadChildren: () => import('./patients/patients.module').then(m => m.PatientsModule) },
   { path: '', component: LandingPageComponent }
 ];
 

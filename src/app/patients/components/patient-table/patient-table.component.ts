@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { PatientTableDataSource } from './patient-table-datasource';
 import { Patient } from 'src/app/core/models/patient.model';
+import { PatientsService } from 'src/app/core/services/patients.service';
 
 @Component({
   selector: 'app-patient-table',
@@ -14,10 +15,13 @@ export class PatientTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<Patient>;
-  dataSource = new PatientTableDataSource();
+  
+  constructor(private patientsService: PatientsService) { }
+  
+  dataSource = new PatientTableDataSource(this.patientsService);
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['First_Name', 'Last_Name'];
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;

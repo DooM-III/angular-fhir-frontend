@@ -14,9 +14,7 @@ import { Patient } from 'src/app/core/models/patient.model';
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: Patient[] = [
-  {First_Name: "yoyo", Last_Name: "yaya", hash: 91181818, timestamp: new Date(), BirthDate: "fzfz", Diagnosis: "sggr"},
-  {First_Name: "yoyo", Last_Name: "yaya", hash: 91181818, timestamp: new Date(), BirthDate: "fzfz", Diagnosis: "sggr"},
-  {First_Name: "yoyo", Last_Name: "yaya", hash: 91181818, timestamp: new Date(), BirthDate: "fzfz", Diagnosis: "sggr"}
+  // {First_Name: "yoyo", Last_Name: "yaya", hash: 91181818, timestamp: new Date(), BirthDate: "fzfz", Diagnosis: "sggr"}
 ];
 
 /**

@@ -21,11 +21,12 @@ export class PatientTableComponent implements AfterViewInit {
   dataSource = new PatientTableDataSource(this.patientsService);
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['First_Name', 'Last_Name'];
+  displayedColumns = ['First_Name', 'Last_Name', 'timestamp', 'BirthDate', 'Diagnosis'];
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
+  
 }

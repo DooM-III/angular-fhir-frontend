@@ -4,7 +4,7 @@
     <p>{{ 33 | percent }}</p>
     <p>{{ 344.36 | currency: 'EUR' }}</p> -->
     <h2>{{ patient.First_Name }} {{ patient.Last_Name| uppercase }}</h2>
-    <h2>{{ patient.Diagnosis }}</h2>
+    Né(e) le {{ patient.BirthDate | date }}<br />
+    Diagnostic : {{ patient.Diagnosis }}<br />
     <button>VIEW</button>
-    help
 </div>

@@ -10,7 +10,7 @@ export class PatientsService {
     constructor(private http: HttpClient) {}
     
     getAllPatients(): Observable<Patient[]> {
-      return this.http.get<Patient[]>('http://fhir-api-svc.demo-healthcare-fhir-dataviz.svc.cluster.local:8000/patients');
+      return this.http.get<Patient[]>('/api/patients');
       }    
 
 }

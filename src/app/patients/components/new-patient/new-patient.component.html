@@ -2,30 +2,30 @@
     <h2>NOUVEAU Patient</h2>
     <form [formGroup]="snapForm">   
         <div class="form-group">
-            <label for="title">Titre</label>
-            <input id="title" type="text" formControlName="title">
+            <label for="First_Name">Prénom</label>
+            <input id="First_Name" type="text" formControlName="First_Name">
         </div>
         <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" type="text" formControlName="description" rows="4">
+            <label for="Last_Name">Nom</label>
+            <textarea id="Last_Name" type="text" formControlName="Last_Name" rows="4">
             </textarea>
         </div>
         <div class="form-group">
-            <label for="imageUrl">URL de l'image</label>
-            <input id="imageUrl" type="text" formControlName="imageUrl">
+            <label for="BirthDate">Date de Naissance</label>
+            <input id="BirthDate" type="text" formControlName="BirthDate">
         </div>
         <div class="form-group">
-            <label for="location">Lieu</label>
-            <input id="location" type="text" formControlName="location">
+            <label for="Diagnosis">Diagnostic</label>
+            <input id="Diagnosis" type="text" formControlName="Diagnosis">
         </div>
         <div class="action-buttons">
-            <!-- <button type="submit" (click)="onSubmitForm()" [disabled]="snapForm.invalid">Enregistrer</button> -->
+            <button type="submit" (click)="onSubmitForm()" [disabled]="snapForm.invalid">Enregistrer</button>
         </div>
     </form>
 </div>
 <div class="face-snap-card" *ngIf="PatientPreview$ | async as Patient">
-    <!-- <h2>{{ Patient.title | uppercase }}</h2>
-    <p>Mis en ligne {{ Patient.createdDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>
+    <h2>{{ Patient.First_Name | uppercase }}</h2>
+    <!-- <p>Mis en ligne {{ Patient.createdDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>
     <img [src]="Patient.imageUrl" [alt]="Patient.title">
     <p>{{ Patient.description }}</p>
     <p *ngIf="Patient.location">Photo prise à {{ Patient.location }}</p> -->

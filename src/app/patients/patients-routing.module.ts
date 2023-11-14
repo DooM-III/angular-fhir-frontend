@@ -8,10 +8,10 @@ import { PatientTableComponent } from './components/patient-table/patient-table.
 
 
 const routes: Routes = [
-    { path: 'create', component: NewPatientComponent,  },
+    { path: 'create', component: NewPatientComponent },
     { path: 'table', component: PatientTableComponent },
     { path: ':id', component: SinglePatientComponent, canActivate: [AuthGuard] },
-    { path: '', component: PatientListComponent, canActivate: [AuthGuard]},
+    { path: '', component: PatientListComponent},
   ];
   
   @NgModule({

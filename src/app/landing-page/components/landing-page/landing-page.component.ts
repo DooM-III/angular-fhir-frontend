@@ -19,7 +19,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   onContinue(): void {
-    this.router.navigateByUrl('patients');
+    this.router.navigateByUrl('patient');
   }
 
   onSubmitForm(form: NgForm) {

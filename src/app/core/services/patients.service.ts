@@ -10,13 +10,13 @@ export class PatientsService {
     constructor(private http: HttpClient) {}
     
     getAllPatients(): Observable<Patient[]> {
-      return this.http.get<Patient[]>('/api/patients');
+      return this.http.get<Patient[]>('/patients');
       }    
 
     addPatient(formValue: { First_Name: string, Last_Name: string, BirthDate: string,
       Diagnosis?: string }): Observable<Patient> {
         return this.getAllPatients().pipe(
-        switchMap(newPatient => this.http.post<Patient>('/api/patients', newPatient))
+        switchMap(newPatient => this.http.post<Patient>('/patients', newPatient))
         );
       }   
 }

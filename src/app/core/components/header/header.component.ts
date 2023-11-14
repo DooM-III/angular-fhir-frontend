@@ -14,6 +14,6 @@ export class HeaderComponent implements OnInit {
   }
 
   onAddNewPatients() {
-    this.router.navigateByUrl('/patients/create');
+    this.router.navigateByUrl('/patient/create');
   }
 }
